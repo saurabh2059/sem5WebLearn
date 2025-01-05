@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table</title>
+        <style>
+            /* td,th{
+                padding:20px;
+            } */
+            body{
+                background-color:#ccc;
+          
+                text-align:center;
+                font-size:30px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <table border="2px" style="border-collapse: collapse; ">
+            
+            <tr>
+                <th>S.N</th>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>John</td>
+                <td>Doe</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>Smith</td>
+                <td>Doe</td>
+            </tr>
+        
+        </table>
+
+
+        <h3>grouping head</h3>
+
+
+        <table border="5px" cellpadding="10" cellspacing="10"  bgcolor="skyblue">
+            <caption style="color:red;">USERS TABLE</caption>
+            
+            <thead bgcolor="white">
+            <tr >
+                <td rowspan="2" >S.NO</td>
+                <td colspan="2"  >FULL NAME</td>
+            </tr>
+            
+            <tr >
+             
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Saurabh</td>
+                <td>Aryal</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sulav</td>
+                <td>Aryal</td>
+            </tr>
+        </tbody>
+    <tfoot bgcolor="grey">
+       <tr>
+        <td>Total user</td>
+        <td colspan="2">40</td>
+       </tr>
+    </tfoot>
+        </table>
+    </body>
+</html>

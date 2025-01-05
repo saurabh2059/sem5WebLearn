@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>  table merger</title>
+        <style>
+
+            td{
+                padding: 10px;
+                border:2px solid black;
+            }
+            table{
+                height:500px;
+                width:500px;
+                
+            }
+            body{
+                background-color:#ccc;
+                color:red;
+                text-align:center;
+                font-size:50px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table  border="2px"  style=" border-collapse: collapse;" >
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td colspan="2">4</td>
+               
+            </tr>
+            <tr>
+                <td>5</td>
+                <td colspan="4">6</td>
+            </tr>
+            <tr>
+                <td colspan="2">7</td>
+                <td rowspan="2">8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td colspan="2">13</td>
+            </tr>
+        </table>
+    </body>
+</html>

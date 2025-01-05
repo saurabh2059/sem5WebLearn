@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  
+
+    <style>
+
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        body{
+            background-color: rgb(112, 107, 107);
+            width: 70%;
+            margin: 60px auto;
+
+        }
+
+        fieldset{
+            border: 4px dashed white;
+            padding: 30px;
+        }
+        
+
+        legend{
+            text-align: center;
+            font-size: 20px;
+           
+        }
+
+        input[type ="submit"], input[type="reset"]{
+            padding: 10px 20px;
+        }
+        input,select{
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+        }
+        label{
+            width: 100px;
+            text-align: start;
+            color: white;
+        }
+
+        input[type="radio"],input[type="checkbox"] {
+            width: 40px;
+            height: 15px;
+            border-color: black;
+        }
+
+        .abc{
+     
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            gap: 10px;
+        }
+        h1{
+            margin: 0px 0px 40px 0px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1> WELCOME TO THE USER KYC FORM ,  </h1>
+
+
+    <fieldset>
+
+        <legend>USER KYC FORM</legend>
+
+        <form action="">
+
+            <div class="abc">
+          
+                <label for="username">USERNAME</label>
+  
+                  <input type="text" name="username" id="username" placeholder="john209" value="saurabh">
+             
+            </div>
+
+            <br><br>
+
+            <div class="abc">
+            <label for="email">EMAIL</label>
+            <input type="email" name="email" id="email">
+            </div>
+            <br><br>
+
+            <div class="abc">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password">
+            
+
+        </div>
+            <br><br>
+        <div class="abc">
+            <label for="confirmPassword">CONFIRM PASSWORD</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+        </div>
+            <br><br>
+
+            <div class="abc">
+                <label for="country">COUNTRY</label>
+                <select name="country" id="country"  >
+    
+                    <option value="" >Chose a country</option>
+                    <option value="nepal" selected >Nepal</option>
+                    <option value="india">India</option>
+                    <option value="china">China</option>
+                    <option value="usa" >USA</option>
+    
+                </select>
+                 </div>
+                <br><br>
+
+            <div class="abc">
+
+            <label for="gender" >
+                GENDER
+            </label>
+            <div class="">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" checked  >
+
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female">
+            <label for="other">Other</label>
+            <input type="radio" name="gender" id="other">
+            </div>
+            </div>
+
+            <br><br>
+
+            
+
+            <div class="abc">
+            <label for="hobbies">HOBBIES</label>
+                
+            <div class="">
+            <label for="singing">Singing</label>
+            <input type="checkbox" name="singing" id="singing">
+            <label for="dancing">Dancing</label>
+            <input type="checkbox" name="dancing" id="dancing">
+        </div>
+        </div>
+
+            <br><br>
+
+            <div class="abc">
+            <input type="submit" name="submit" id="submit" value="SUBMIT">
+            <input type="reset" name="reset" id="reset" value="RESET">
+         
+        </div>
+
+        </form>
+
+    </fieldset>
+
+    <button onclick="clicked()" id="pbtn" > show</button>
+    <button onclick="clickedHide()" id="pbtn" > hide</button>
+
+
+
+
+
+    <script>
+
+        function test(){
+            console.log("hello")
+        }
+
+
+        let value = document.getElementById("pbtn");
+        let hi = document.getElementById("password");
+     
+        function clicked(){
+
+
+    
+                hi.type="text"
+                console.log(hi)
+          
+        }
+        function clickedHide(){
+
+
+    
+                hi.type="password"
+                console.log(hi)
+          
+        }
+    </script>
+    
+</body>
+
+
+</html>
