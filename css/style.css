@@ -1,0 +1,18 @@
+h1{
+
+    /* property:value */
+    
+    background-color: #b723dc;
+     color: white;
+      padding: 10px;
+       margin: 0;
+}
+p{
+
+    padding: 50px;
+    /* background-color: rgba(123,123,224,0.9);  */
+    color: white;
+    /* background-color:; */
+background: linear-gradient(to left, red, purple);
+/* background: linear-gradient(to right, red 80%, purple 20%); */
+}
