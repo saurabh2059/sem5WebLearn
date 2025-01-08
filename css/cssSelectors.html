@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css selectors</title>
+    <style>
+      /* universal selector */
+      * {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      /* element selectors */
+      h1 {
+        color: white;
+        background-color: blue;
+        margin: 10 0;
+      }
+
+      /* id selectors */
+      #h3 {
+        color: white;
+        background-color: green;
+        margin: 10 0;
+        font-style: italic;
+      }
+
+      #info {
+        color: blue;
+      }
+
+      /* class selector */
+      .class {
+        background-color: aqua;
+      }
+
+      /* grouping selector */
+      h1,h2,#h3{
+        letter-spacing: 5px;
+      }
+
+      h1:hover {
+        font-size: 50px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- for element selector -->
+    <h1>I am head one</h1>
+    <h2>I am head two</h2>
+    <p>I am paragraph</p>
+
+    <!-- for id selector -->
+    <h3 id="h3">I am heading three</h3>
+    <div id="info">Some info ....</div>
+
+    <!-- class selectors -->
+    <div class="class">Hello class selector</div>
+
+   
+
+  </body>
+</html>
