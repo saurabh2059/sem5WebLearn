@@ -36,3 +36,6 @@ Semantic HTML uses elements that clearly define their purpose and the type of co
 |   <article> |         |
 |   <footer>  |         |
 --------------------------
+
+
+2025 /01/ 05  date of lab

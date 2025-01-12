@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders</title>
+
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        .border1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            /* border-radius: 100%; */
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-width: 10px;
+            border-color: black;
+            border-style: inset;
+        }
+        .border2{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            /* border-radius: 100%; */
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-width: 10px;
+            border-color: black;
+            border-style: inset;
+        }
+
+        .flex{
+            display: flex;
+            justify-content: center;
+            gap: 400px;
+
+        }
+        .nose{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 10px;
+            border :10px solid black;
+       
+
+            
+        }
+        .mouth{
+            margin-top: 100px;
+            /* height: 100px; */
+            width: 400px;
+            background-color: red;
+            border-radius: 10px;
+            border :10px solid black;
+        }
+
+        .cen{
+            display: flex;
+            justify-content: center;
+        }
+
+        .face{
+            width: 60%;
+            margin: 100px auto;
+            justify-content: center;
+            border: 10px double black;
+            padding: 120px 45px;
+            border-radius: 50%;
+        }
+        .text{
+            color: red;
+            font-size: large;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-align: center;
+
+        }
+
+        .hi{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        ORCHID INTL COLLEGE
+    </div>
+
+    <div class=" face">
+    
+<div class="flex">
+    <div class="border1"></div>
+    <div class="border2"></div>
+</div>
+
+<div class="cen">
+<p class="nose"> </p>
+</div>
+
+<div class="cen">
+    <p class="mouth"></p>
+    </div>
+</div>
+
+
+<div class="hi">
+
+</div>
+</body>
+</html>
