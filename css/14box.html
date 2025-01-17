@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: grey;
+        }
+        .box{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* position: relative; */
+            
+            /* h-offset v-offset blur spread color */
+        }
+
+        .box:hover{
+            /* box-shadow:  5px 5px 5px 5px blue,-5px -5px 5px 5px green  ; */
+            box-shadow: -5px 5px 5px black,5px -5px 5px green ;
+        }
+
+        p{
+            position: relative;
+      
+            text-align: center;
+            text-shadow: 5px 5px 2px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <p>hello world</p>
+    </div>
+</body>
+</html>
