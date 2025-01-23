@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>format</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            text-align: center;
+           
+        }
+
+        header{
+            height: 20vh;
+            width: 100%;
+            background-color: blue;
+            position: sticky;
+        }
+       
+        /* main{
+            display: flex;
+            
+        } */
+        aside:first-child{
+            
+            width: 25%;
+            height: 60vh;
+            background-color: brown;
+            float: left;
+         
+        }
+        aside:last-child{
+           
+            width: 25%;
+            height: 60vh;
+            background-color: purple;
+            float: right;
+          
+        }
+        section{
+            width: 50%;
+            height: 60vh;
+            background-color: grey;
+            float: left;
+        }
+
+        footer{
+            height: 20vh;
+            width: 100%;
+            background-color: red;
+            clear: both;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>Header</header>
+
+    <main>
+        <aside>aside left</aside>
+        <section>plain</section>
+        <aside>aside right</aside>
+    </main>
+
+    <footer>Footer</footer>
+</body>
+</html>
