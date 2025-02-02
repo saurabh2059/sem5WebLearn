@@ -1,3 +1,11 @@
+
+git add .
+git commit -m ""
+git push origin main
+
+
+
+
 # Semantic HTML 
 
 Semantic HTML uses elements that clearly define their purpose and the type of content they contain. These elements provide meaning to both the browser and developers, improving readability and acessibility.
