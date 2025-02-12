@@ -36,6 +36,7 @@ switch(value){
             other.title = arr2
 
         })
+       
 
         break;
 }

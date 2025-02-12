@@ -20,6 +20,7 @@ button.addEventListener('click',()=>{
 
 })
 
+// custom call back function
 
 function onEnter(countries){
 
