@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+      .box {
+        height: 100px;
+        width: 100px;
+        border: 2px solid white;
+      }
+      #container {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      #clicker{
+        border-radius: 10px;
+        width: 50%;
+        margin: 20px 0px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 0px;
+        background-color: red;
+        color: white;
+        font-family: Verdana;
+        letter-spacing: 2px;
+        transition: all linear 0.2s;
+
+        &:hover{
+            letter-spacing: 4px;
+            /* box-shadow: 3px 3px 3px yellow; */
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <button id="clicker">Click To Create A Box </button>
+    <br><br><br>
+    <div id="container"></div>
+
+    <script>
+
+        // getting elements from html
+      let btn = document.getElementById("clicker");
+      let container = document.getElementById("container");
+      // random color generator
+      function randomColor() {
+        let random1 = Math.floor(Math.random() * 1000) % 256;
+        let random2 = Math.floor(Math.random() * 1000) % 256;
+        let random3 = Math.floor(Math.random() * 1000) % 256;
+
+        let color = `rgb(${random1},${random2},${random3})`;
+
+        return color;
+      }
+
+      //  button event to create a box on click
+
+      btn.addEventListener("click", () => {
+        let color = randomColor();
+        let box = document.createElement("div");
+
+        box.classList.add("box");
+        box.style.backgroundColor = color;
+
+                // adding event on  box double click to change color
+
+                box.addEventListener("dblclick", () => {
+                let color2 = randomColor();
+                box.style.backgroundColor = color2;
+
+                });
+
+        // final appending the box to container
+        container.appendChild(box);
+
+      });
+    </script>
+  </body>
+</html>
