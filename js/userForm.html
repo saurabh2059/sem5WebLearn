@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Fprm</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="userForm" id="userForm" >
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <p id="usernameError" class="error">  </p>
+        <br>
+
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+
+    </form>
+
+    <script>
+
+        const userForm = document.forms.userForm;
+        console.log(userForm)
+
+        userForm.addEventListener('submit',(e)=>{
+
+            e.preventDefault();
+            // console.log("form has been submitted")
+
+            const username = document.getElementById("username").value;
+             //  or we can user
+            // userform.username
+            // console.log(userForm.username)
+            let usernameError = document.getElementById("usernameError")
+
+            if(username == ""|| username.trim() == ""){
+                // console.log("username required")
+                
+                usernameError.textContent="username required"
+
+            }
+            else if(username.length < 3 || username.length >15){
+                usernameError.textContent="username must be 3 long"
+            }
+
+            else{
+                usernameError.textContent=""
+                console.log("username is :",username)
+            }
+
+
+
+        })
+      
+
+
+
+        
+    </script>
+</body>
+</html>

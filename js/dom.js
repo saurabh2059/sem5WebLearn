@@ -13,7 +13,7 @@ container.append(button)
 
 
 button.classList.add('btn')
-button.classList.add('my-btn')
+// button.classList.add('my-btn')
 button.classList.remove('btn')
 
 button.addEventListener('click',()=>{

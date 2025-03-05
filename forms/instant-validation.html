@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="simpleForm">
+        <input type="text" id="username" placeholder="Enter Username">
+        <span id="uError" class="error"></span>
+    </form>
+
+    <script>
+        //input event is fired when user types something
+        //kei lekhda lekhdai error xa bhani dekhauxa
+        
+        document.getElementById("username").addEventListener("input", function (e) {
+            // const username = document.getElementById("username").value;
+            // OR WE CAN ALSO DO
+            const username = e.target.value;
+            // console.log(username)//watch console by inspecting to understand better
+
+            const uError = document.getElementById("uError");
+
+
+            // Username validation
+            const usernamePattern = /^[A-Za-z]+$/;
+            if (username.trim() == "") {
+                uError.textContent = "Username is required!";
+            } else if (username.length < 3 || username.length > 20) {
+                uError.textContent = "Username must be greater than 3 and less than 20 characters!";
+            } else if (!username.match(usernamePattern)) {
+                uError.textContent = "Username must contain characters only";
+            } else{
+                uError.textContent="";
+            }
+        }
+    );
+    </script>
+</body>
+
+</html>

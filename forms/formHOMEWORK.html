@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .interest{
+            justify-content: center;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>SIMPLE INTEREST CALCULATOR</legend>
+    <div id="interest">
+       <form action="" name="SI" id="SI">
+        
+        <label for="prin"> P:  </label>
+        <input type="number" name="prin" id="prin">
+        <br>
+        <label for="time"> T:  </label>
+        <input type="number" name="time" id="time">
+        <br>
+        <label for="rate"> R:  </label>
+        <input type="number" name="rate" id="rate">
+        <br>
+        <!-- <p class="error" id="error"></p> -->
+        <br>
+        <input type="button" value="Calculate" id="calculate" style="background-color: burlywood;">
+
+       </form>
+            <p id="result"></p>
+    </div>
+    
+    <script>
+        const SI = document.getElementById("interest");
+const button = document.getElementById("calculate");
+
+button.addEventListener('click', function (event) {
+    event.preventDefault();
+    const p = document.SI.prin.value;
+    const t = document.SI.time.value;
+    const r = document.SI.rate.value;
+    if (p == "" || t == "" || r == "") alert("Some of the fields are empty.");
+    else {
+        const Simpleinterest = (p * t * r) / 100;
+        const res = document.getElementById("result");
+        res.textContent = "Simple Interest = " + Simpleinterest;
+    }
+});
+    </script>
+    </fieldset>
+</body>
+</html>

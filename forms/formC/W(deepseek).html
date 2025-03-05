@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="registerForm">
+        <!-- Name Field -->
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <!-- Email Field -->
+        <label for="email">Email</label>
+        <input type="text" id="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <!-- Password Field -->
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <span id="passwordError" class="error"></span>
+        <br><br>
+
+        <!-- Phone Number Field -->
+        <label for="phone">Phone Number</label>
+        <input type="number" id="phone">
+        <span id="phoneError" class="error"></span>
+        <br><br>
+
+        <!-- Gender Field -->
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <span id="genderError" class="error"></span>
+        <br><br>
+
+        <!-- Terms and Conditions Field -->
+        <label>
+            <input type="checkbox" id="terms"> I agree to the Terms and Conditions
+        </label>
+        <span id="termsError" class="error"></span>
+        <br><br>
+
+        <!-- Country Selection Field -->
+        <label for="country">Country</label>
+        <select id="country">
+            <option value="">Select a country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+        </select>
+        <span id="countryError" class="error"></span>
+        <br><br>
+
+        <!-- Message Field -->
+        <label for="message">Message</label>
+        <textarea id="message" rows="4"></textarea>
+        <span id="messageError" class="error"></span>
+        <br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", handleSubmit);
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            // Get form field values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const terms = document.getElementById("terms").checked;
+            const country = document.getElementById("country").value;
+            const message = document.getElementById("message").value;
+
+            // Access error spans
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+            const phoneError = document.getElementById("phoneError");
+            const genderError = document.getElementById("genderError");
+            const termsError = document.getElementById("termsError");
+            const countryError = document.getElementById("countryError");
+            const messageError = document.getElementById("messageError");
+
+            let isValid = true;
+
+            // Name Validation
+            if (name.trim() === "") {
+                nameError.textContent = "Name is required";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Email Validation
+            const emailPattern = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})$/;
+            if (email.trim() === "") {
+                emailError.textContent = "Email is required";
+                isValid = false;
+            } else if (!email.match(emailPattern)) {
+                emailError.textContent = "Invalid email format";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Password Validation
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (password.trim() === "") {
+                passwordError.textContent = "Password is required";
+                isValid = false;
+            } else if (!password.match(passwordPattern)) {
+                passwordError.textContent = "Password must be at least 8 characters, with 1 uppercase, 1 lowercase, and 1 number";
+                isValid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            // Phone Number Validation
+            const phonePattern = /^\d{10}$/;
+            if (phone.trim() === "") {
+                phoneError.textContent = "Phone number is required";
+                isValid = false;
+            } else if (!phone.match(phonePattern)) {
+                phoneError.textContent = "Phone number must be exactly 10 digits";
+                isValid = false;
+            } else {
+                phoneError.textContent = "";
+            }
+
+            // Gender Validation
+            if (!gender) {
+                genderError.textContent = "Please select a gender";
+                isValid = false;
+            } else {
+                genderError.textContent = "";
+            }
+
+            // Terms and Conditions Validation
+            if (!terms) {
+                termsError.textContent = "You must agree to the terms and conditions";
+                isValid = false;
+            } else {
+                termsError.textContent = "";
+            }
+
+            // Country Validation
+            if (country === "") {
+                countryError.textContent = "Please select a country";
+                isValid = false;
+            } else {
+                countryError.textContent = "";
+            }
+
+            // Message Validation
+            if (message.trim() === "") {
+                messageError.textContent = "Message is required";
+                isValid = false;
+            } else if (message.trim().length < 20) {
+                messageError.textContent = "Message must be at least 20 characters";
+                isValid = false;
+            } else {
+                messageError.textContent = "";
+            }
+
+            // Submit the form if all validations pass
+            if (isValid) {
+                alert("Form submitted successfully!");
+                // You can submit the form data to the server here
+            }
+        }
+    </script>
+</body>
+</html>

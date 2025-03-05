@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="" name="userForm" id="userForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <p id="usernameError" class="error"></p>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <script>
+        // const userForm = document.getElementById("userForm");
+        // console.log(userForm);
+
+        //this same can be done as
+        const userForm = document.forms.userForm;
+        //adding submit event
+
+        
+       document.forms.userForm.addEventListener("submit",function(e){
+            e.preventDefault();
+            // console.log("Form has been Submitted");
+            //constant here must be kept same as name (here username)
+            // const username = document.getElementById("username").value;
+            // console.log("Uname is", username);
+
+            //OR We can also do
+            const username = document.forms.userForm.username.value;
+            // console.log(username) ;
+        });
+        const userErrror = document.getElementById("usernameError");
+        //validation
+        //trim is used in case user only gives spaces 
+        if(username == "" || username.trim() == ""){
+            console.log("Username is required");
+            userErrror.textContent="Username is required!"
+        }else if(username.length <3 || username.length > 15)
+            {
+                console.log("Username is ",username);
+                userErrror.textContent = "Username must be atleast 3 char long";
+            }
+            else{
+                console.log(object)
+            }
+        
+    </script>
+</body>
+</html>

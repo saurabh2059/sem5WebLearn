@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- qn is in image -->
+    <form id="registerForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <span id="userError" class="error"></span>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="text" id="email">
+        <span id="emailError" class="error"></span>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <span id="passwordError" class="error"></span>
+        <br><br>
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <span id="ageError" class="error"></span>
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male" id="male"> Male
+        <input type="radio" name="gender" value="female" id="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <span id="genderError" class="error"></span>
+        <br><br>
+        <input type="submit" value="Register" />
+
+    </form>
+    <script>
+        const registerForm = document.getElementById("registerForm");
+        registerForm.addEventListener("submit", handleSubmit);
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const age = document.getElementById("age").value;
+            const male = document.getElementById("male").checked;
+            const female = document.getElementById("female").checked;
+
+            //access all error dom
+            const userError = document.getElementById("userError");
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+            const ageError = document.getElementById("ageError");
+            const genderError = document.getElementById("genderError");
+
+
+            let isValid = true;
+            //username validation
+            const usernamePattern = /^[A-Za-z]+$/;
+            if (username.trim() == "") {
+                userError.textContent = "username is required";
+                isValid = false;
+            } else if (!username.match(usernamePattern)) {
+
+                userError.textContent = "Username must contains characters only";
+                isValid = false;
+            } else {
+                userError.textContent = "";
+            }
+
+            //email validation
+            const emailPattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (email.trim() == "") {
+                emailError.textContent = "email is required";
+                isValid = false;
+            } else if (!email.match(emailPattern)) {
+                emailError.textContent = "Email is not in the correct format";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            //password Validation
+            //trim is not required since we can give space in the password
+            const passwordPattern = /^[A-Za-z0-9]\w{4,14}$/;
+            if (password == "") {
+                passwordError.textContent = "Password is necessary";
+                isValid = false;
+            } else if (!password.match(passwordPattern)) {
+                passwordError.textContent = "password is not in the required format";
+                isValid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            //age validation
+            if (age == "" || age.trim() == "") {
+                ageError.textContent = "Age is required";
+                isValid = false;
+                // isNaN means is NotANumber
+            } else if (isNaN(age) || age < 18 || age > 100) {
+                ageError.textContent = "Age must be between 18 and 100";
+                isValid = false;
+            } else {
+                ageError.textContent = "";
+            }
+
+
+            //gender validation
+            if (male || female) {
+                genderError.textContent = "";
+            } else {
+                genderError.textContent = "Please select a gender";
+
+            }
+
+            // Submit the form if all validations pass
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

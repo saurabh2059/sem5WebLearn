@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+        span{
+            font-size: 15px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: rgb(9, 9, 31);
+        }
+
+        form {
+            color: rgb(255, 255, 255);
+            /* box-shadow: rgb(167, 149, 149) 0px 4px 12px inset; */
+        }
+
+        legend {
+            background-color: grey;
+            color: white;
+            padding: 8px;
+            font-size: 15px;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        legend {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend> User Registration Form </legend>
+        <form action="" id="registerForm">
+
+            <label for="username"> Username: </label>
+            <input type="text" id="username">
+            <span id="uError" class="error"></span>
+            <br><br>
+
+            <label for="phone"> Phone Number: </label>
+            <input type="number" id="phone">
+            <span id="pError" class="error"></span>
+            <br><br>
+
+            <label for="email"> E-mail: </label>
+            <input type="email" id="email">
+            <span id="eError" class="error"></span>
+            <br> <br>
+
+            <label for="pass"> Password: </label>
+            <input type="password" id="pass" name="pswd">
+            <span id="passError" class="error"></span>
+            <br> <br>
+
+            <label for="cPass"> Confirm Password: </label>
+            <input type="password" id="cPass">
+            <span id="cPassError" class="error"></span>
+            <br> <br>
+
+            <label for="gender"> Gender: </label>
+            <input type="radio" id="male" name="gender">
+            <label for="male"> Male </label>
+            <input type="radio" id="female" name="gender">
+            <label for="female"> Female </label>
+            <input type="radio" id="other" name="gender">
+            <label for="other"> Other </label>
+            <span id="gError" class="error"></span>
+            <br> <br>
+
+            <label for="country"> Country: </label>
+            <select name="country" id="country" size="0">
+                <option value=""> Choose a country </option>
+
+                <optgroup label="Asia">
+                    <option value="np"> Nepal </option>
+                    <option value="ch"> China </option>
+                    <option value="in"> India </option>
+                    <option value="bng"> Bangladesh </option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option value="es"> Spain </option>
+                    <option value="pr"> Portugal </option>
+                    <option value="gr"> Germany </option>
+                    <option value="fr"> France </option>
+                </optgroup>
+                <optgroup label="America">
+                    <option value="us"> USA </option>
+                    <option value="arg"> Argentina </option>
+                </optgroup>
+
+            </select>
+            <span id="counError" class="error"></span>
+            <br> <br>
+            <label for="comment"> Message: </label>
+            <textarea name="comment" id="message" rows="3" cols="23">Message Box
+            </textarea>
+            <span id="mError" class="error"></span>
+            <br><br>
+
+            <input type="checkbox" id="terms">
+            <label for="terms"> Terms and Conditions </label>
+            <span id="tError" class="error"></span>
+            <br><br>
+            
+            <input type="submit" value="Register" id="submit">
+        </form>
+    </fieldset>
+
+    <script src="./formValidation.js"></script>
+</body>
+
+</html>

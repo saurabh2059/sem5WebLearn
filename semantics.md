@@ -13,7 +13,7 @@ Semantic HTML uses elements that clearly define their purpose and the type of co
 # Benifits
 
     - Accessibility: Screen readers and assistive technologies can  better interepret the content.
-    - SEO optimization: Search engines better understand yout page structure , improving indexing and   ranking
+    - SEO optimization: Search engines better understand your page structure , improving indexing and   ranking
     - Readability: Easier for developers to read and maintain the code.
 
 # Semantic HTML elements
@@ -29,7 +29,7 @@ Semantic HTML uses elements that clearly define their purpose and the type of co
     <footer>    Contains footer information, like copyright or contact details.
     <figure>    Groups media, such as images or diagrams, along with their captions.
     <figcaption>Provides a caption for the <figure> element.
-    <time>      Represent time or dates, useful for eventd or timestams.
+    <time>      Represent time or dates, useful for event or timestamps.
     <mark>      Highlights text, indicationg relevance or context.
 
 # Semantic vs Non-Semantic Elements

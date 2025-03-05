@@ -1,0 +1,57 @@
+
+Biswas
+Biswas Sunar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" name="userForm" id="userForm">
+        <label for="username"> Username:   </label>
+        <input type="text" name="username" id="username">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+        // const userForm = document.getElementById("userForm");
+const userForm = document.forms.userForm;
+console.log(userForm);
+//submit event
+document.forms.userForm.addEventListener("submit",function(event){
+    event.preventDefault(); 
+    //default chai form refesh hunxa submit garesi
+    // preventDefault le chai maintain garxa teslai
+    // refresh vayesi goes to initial state
+    // console.log("Form has been submitted");
+    const username = document.getElementById("username").value;
+    // const username = document.forms.userForm.huhu.value; //fetching through name or id
+
+    console.log(username);
+    if(username == "" || username.trim()=="") {
+        
+        const error = document.getElementById('error');
+        // id get garyo ani tesko content ma chai alert message dio
+        error.textContent = "Username Required";
+    }else if(username.length < 3 || username.length > 18 ) alert("Username must be alteast 3-18 character long");
+    else{
+        const error = document.getElementById('error');
+        error.textContent = "";
+        // alert("Username: "+ username);
+    }
+ 
+}
+);
+    </script>
+</body>
+</html>

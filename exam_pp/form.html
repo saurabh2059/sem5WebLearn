@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body bgcolor="#ccc">
+    
+    <form action="" id="kyc">
+
+
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name">
+        <span id="nError"></span>
+        <br><br>
+
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+        <span id="aError"></span>
+        <br><br>
+
+        
+        
+
+        <label for="name">Email</label>
+        <input type="email" name="email" id="email">
+        <span id="eError"></span>
+        <br><br>
+
+        <label for="gender"> Gender</label>
+
+        <input type="radio" name="gender" id="male" >
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+        <span id="gError"></span>
+        <br><br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <span id="pError"></span>
+        <br><br>
+
+        <input type="checkbox" name="terms" id="terms">
+        <label for="terms">I agree </label>  
+        <span id="tError"></span>
+        <br><br>
+
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+
+
+
+
+        
+    </form>
+
+    <script src="validate.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        body{
+            background-color: #000000;
+            color: white;
+        }
+
+        button{
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+           
+        }
+
+        #div1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        #div2{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        // $(document).ready(function(){
+
+        //     console.log("document ready")
+
+        // })
+        // opt2
+
+        $(function(){
+
+            console.log("document ready for short hand")
+
+
+
+            $("#hide").on('click',function(){
+                console.log("clicked");
+                $("p").hide(2000,function(){
+                    alert("hidden success ")
+                })
+            })
+
+            $("#show").on('click',()=>{
+                console.log("show clicked");
+                $("p").show(2000,()=>{
+                    alert("shown successs")
+                })
+            })
+
+            $("#toggle").on('click',()=>{
+                console.log("toggle clicked")
+                $("p").toggle(1000,()=>{
+                    alert("toggled")
+                })
+            })
+
+
+
+            $('#fade-out').on('click',()=>{
+                $('#div1').fadeOut("1000")
+                $('#div2').fadeOut("slow")
+                
+            })
+
+            $('#fade-in').on('click',()=>{
+
+                $('#div1').fadeIn("1000")
+                $('#div2').fadeIn("slow")
+            })
+
+            $('#fade-to').on('click',()=>{
+
+                $('#div1').fadeTo("2000",0.3)
+                $('#div2').fadeTo("2000",0.8)
+
+            })
+
+            $('#fade-toggle').on('click',()=>{
+
+                $('#div1').fadeToggle("2000")
+                $('#div2').fadeToggle("2000")
+            })
+
+            $('#pannel1').on('click',()=>{
+                $('#slideDown').slideDown()
+            })
+            $('#pannel2').on('click',()=>{
+                $('#slideDown').slideUp()
+            })
+
+
+            $('#applyCss').on('mouseenter',()=>{
+                $('#slideDown').css({"background":"red","color":"black"})
+            })
+            $('#applyCss').on('mouseleave',()=>{
+                $('#slideDown').css({"background":"black","color":"white"})
+            })
+
+            $('#animate').on('click',()=>{
+
+                let box = $('#animated')
+               box.animate({right:'0px'},"slow");
+               box.css({background:'green'},"slow");
+               box.animate({bottom:'0px'},"slow")
+               box.animate({left:'0px'},"slow");
+               box.css({background:"yellow"},"slow")
+               box.animate({top:'250px'},"slow")
+            })
+
+
+
+
+            $('#chained').on('click',()=>{
+                $('#chained').css("color","red").animate({right:'0px'}).hide(1000)
+            })
+
+
+            
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quos?</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <button id="fade-out">Fade Out</button>
+    <button id="fade-in">Fade In</button>
+    <button id="fade-to">Fade To</button>
+    <button id="fade-toggle">Fade Toggle</button>
+
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <button id="pannel1">  down</button>
+    <button id="pannel2"> up</button>
+
+    <button id="applyCss">Css</button>
+
+    <p id="slideDown">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum quae, harum ab illum numquam error cumque natus fugiat aliquam consequatur ex. Quam dicta nisi possimus nihil et veniam optio qui ullam, recusandae nesciunt ut? Soluta similique eaque dolor odio quaerat accusantium consequatur dolores modi fugiat, assumenda, velit nulla tenetur veniam exercitationem corporis unde ut eum iusto, incidunt sequi aliquid laboriosam? Sapiente explicabo ab iure minima, labore sequi pariatur laudantium, animi repellat odit commodi excepturi cum aliquid incidunt maxime numquam unde sunt laboriosam. Odit fugit repellendus omnis rem beatae corporis, quas quos recusandae ipsa libero nisi repellat velit cum suscipit debitis?
+    </p>
+
+
+    <button id="animate">Animate box</button>
+    <div id="animated" style="position: absolute; height: 100px; width: 100px; background-color: red;  border: 1px solid white;"></div>
+
+    <button id="chained" style="position: absolute; margin-left: 100px;">chain</button>
+
+    
+</body>
+</html>
+
+regex

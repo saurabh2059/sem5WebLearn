@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation</title>
+
+  <style>
+    .error {
+      color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="registerForm">
+    <label for="username">Username</label>
+    <input type="text" id="username" />
+    <span id="uError" class="error"></span>
+    <br /><br />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" />
+    <span id="eError" class="error"></span>
+    <br /><br />
+
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" />
+    <span id="phError" class="error"></span>
+    <br /><br />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" />
+    <span id="pError" class="error"></span>
+    <br /><br />
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" />
+    <span id="cpError" class="error"></span>
+    <br /><br />
+
+    <label>Gender</label>
+    <input type="radio" id="male" name="gender" value="male" />
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female" />
+    <label for="female">Female</label>
+
+    <span id="gError" class="error"></span>
+    <br /><br />
+
+    <label for="hobbies">Hobbies</label> <br />
+    <input type="checkbox" id="dancing" name="hobbies" value="Dancing" />
+    <label for="dancing">Dancing</label> <br />
+
+    <input type="checkbox" id="singing" name="hobbies" value="Singing" />
+    <label for="singing">Dancing</label> <br />
+
+    <input type="checkbox" id="gaming" name="hobbies" value="Gaming" />
+    <label for="gaming">Dancing</label> 
+
+    <span id="hError" class="error"></span>
+    <br /><br />
+
+    <label for="country">Country</label>
+    <select id="country">
+      <option value="">Select Country</option>
+      <option value="nepal">Nepal</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+      <option value="uk">UK</option>
+    </select>
+    <span id="cError" class="error"></span>
+    <br /><br />
+
+    <label for="terms">
+      <input type="checkbox" id="terms" />
+      <label for="terms"> I accept the terms and conditions </label>
+    </label>
+    <span id="tError" class="error"></span>
+    <br /><br />
+
+    <label for="message">Message</label><br />
+    <textarea id="message" rows="4" cols="50"></textarea>
+    <span id="mError" class="error"></span>
+    <br /><br />
+
+    <input type="submit" value="Register" />
+  </form>
+
+  <script>
+    const registerForm = document.getElementById("registerForm");
+    registerForm.addEventListener("submit", handleSubmit);
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      // Fetch value of each field
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      //querySelector selects the first element that matches CSS selector
+      const gender = document.querySelector('input[name="gender"]:checked')?.value;
+
+      //querySelectorAll selects the all element that matches CSS selector (Since multiple hobbbies is selected)
+      const hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+      const country = document.getElementById("country").value;
+      const terms = document.getElementById("terms").checked;
+      const message = document.getElementById("message").value;
+      // Access error dom
+      const uError = document.getElementById("uError");
+      const eError = document.getElementById("eError");
+      const phError = document.getElementById("phError");
+      const pError = document.getElementById("pError");
+      const cpError = document.getElementById("cpError");
+      const gError = document.getElementById("gError");
+      const hError = document.getElementById("hError");
+      const cError = document.getElementById("cError");
+      const tError = document.getElementById("tError");
+      const mError = document.getElementById("mError");
+
+      // Reset error messages
+      uError.textContent = "";
+      eError.textContent = "";
+      phError.textContent = "";
+      pError.textContent = "";
+      cpError.textContent = "";
+      gError.textContent = "";
+      hError.textContent = "";
+      cError.textContent = "";
+      tError.textContent = "";
+      mError.textContent = "";
+      let isValid = true;
+      // Username validation
+      const usernamePattern = /^[A-Za-z]+$/;
+      if (username.trim() == "") {
+        uError.textContent = "Username is required!";
+        isValid = false;
+      } else if (username.length < 3 || username.length > 20) {
+        uError.textContent = "Username must be greater than 3 and less than 20 characters!";
+        isValid = false;
+      } else if (!username.match(usernamePattern)) {
+        uError.textContent = "Username must contain characters only";
+        isValid = false;
+      }
+      // Email validation
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (email.trim() == "") {
+        eError.textContent = "Email is required!";
+        isValid = false;
+      } else if (!email.match(emailPattern)) {
+        eError.textContent = "Please enter a valid email!";
+        isValid = false;
+      }
+      // Phone validation
+      const phonePattern = /^[0-9]{10}$/;
+      if (phone.trim() == "") {
+        phError.textContent = "Phone number is required!";
+        isValid = false;
+      } else if (!phone.match(phonePattern)) {
+        phError.textContent = "Phone number must be 10 digits!";
+        isValid = false;
+      }
+      // Password validation
+      if (password == "") {
+        pError.textContent = "Password is required!";
+        isValid = false;
+      } else if (password.length < 6) {
+        pError.textContent = "Password must be at least 6 characters!";
+        isValid = false;
+      }
+      // Confirm password validation
+      if (confirmPassword != password) {
+        cpError.textContent = "Passwords do not match!";
+        isValid = false;
+      }
+      // Gender validation
+      if (!gender) {
+        gError.textContent = "Gender is required!";
+        isValid = false;
+      }
+      // Hobbies validation
+      if (hobbies.length == 0) {
+        hError.textContent = "At least one hobby must be selected!";
+        isValid = false;
+      }
+      // Country validation
+      if (country == "") {
+        cError.textContent = "Country is required!";
+        isValid = false;
+      }
+      // Terms validation
+      if (!terms) {
+        tError.textContent = "You must accept the terms and conditions!";
+        isValid = false;
+      }
+      // Message validation
+      if (message == "") {
+        mError.textContent = "Message is required!";
+        isValid = false;
+      }
+      if (isValid) {
+        alert("Form submitted successfully!");
+      }
+    }
+  </script>
+</body>
+
+</html>

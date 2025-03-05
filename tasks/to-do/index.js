@@ -63,8 +63,9 @@ document.body.addEventListener('click',(e)=>{
         }
      else if(id == 'save')
         {
-
-        li.childNodes[1].setAttribute('contenteditable',false)
+         const save = document.getElementById(id);
+         const li = e.target.closest('li')
+         li.childNodes[1].removeAttribute('contenteditable')
 
         }
 

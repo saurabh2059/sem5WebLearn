@@ -76,8 +76,19 @@ let student = {
     name:"Aashan",
     age:21,
     id:101,
-    marks:24.56
+    marks:24.56,
+    publisher:{
+      name:"ram",
+      year:2000
+    }
 }
+
+delete student.marks
+student.name = "hi"
+student.adder = "hhhhhh"
+
+console.log(student)
+
 
 
 function student_val(name,age){
